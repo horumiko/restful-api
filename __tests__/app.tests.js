@@ -27,7 +27,7 @@ describe('Retrieving data', () => {
             .withHeaders('Content-Type', 'application/json')
             .withBody(`
             {
-              "itemId": 5
+              "itemId": 3
             }
           `)
             .expectStatus(200)
