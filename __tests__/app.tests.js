@@ -15,21 +15,8 @@ describe('Retrieving data', () => {
             .get('http://localhost:8082/items')
             .expectStatus(200)
             .expectJson([
-                {
-                    "_id": "657d615f981de6304e97ff87",
-                    "id": 5,
-                    "displayName": "Microwave",
-                    "cartId": 1,
-                    "__v": 0,
-                    "assignedUser": 2
-                },
-                {
-                    "_id": "657d6177981de6304e97ff89",
-                    "id": 6,
-                    "displayName": "Microwave 2",
-                    "cartId": 2,
-                    "__v": 0
-                }
+                {"__v": 0, "_id": "657d615f981de6304e97ff87", "assignedUser": 7, "cartId": 1, "displayName": "Microwave", "id": 3},
+                {"__v": 0, "_id": "657d6177981de6304e97ff89", "cartId": 2, "displayName": "Microwave 2", "id": 6}
         ])
     });
 
