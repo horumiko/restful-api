@@ -16,38 +16,21 @@ describe('Retrieving data', () => {
             .expectStatus(200)
             .expectJson([
                 {
-                    "_id": "656a718f638c2b484b899285",
-                    "id": 3,
-                    "displayName": "s",
-                    "assignedUser": 7,
-                    "cartId": 3,
-                    "__v": 0
+                    "_id": "657d615f981de6304e97ff87",
+                    "id": 5,
+                    "displayName": "Microwave",
+                    "cartId": 1,
+                    "__v": 0,
+                    "assignedUser": 2
                 },
                 {
-                    "_id": "656a71aa638c2b484b899287",
-                    "id": 8,
-                    "displayName": "s",
-                    "assignedUser": 3,
-                    "cartId": 3,
-                    "__v": 0
-                },
-                {
-                    "_id": "657cb6746ef7af3401810116",
-                    "id": 9,
-                    "displayName": "item 9",
-                    "assignedUser": 1,
-                    "cartId": 3,
-                    "__v": 0
-                },
-                {
-                    "_id": "657cd8f261faad5019008ac7",
-                    "id": 666,
-                    "displayName": "AAAAAAA",
-                    "assignedUser": 1,
-                    "cartId": 0,
+                    "_id": "657d6177981de6304e97ff89",
+                    "id": 6,
+                    "displayName": "Microwave 2",
+                    "cartId": 2,
                     "__v": 0
                 }
-            ])
+        ])
     });
 
     test('should item with id 4', async () => {
@@ -57,18 +40,18 @@ describe('Retrieving data', () => {
             .withHeaders('Content-Type', 'application/json')
             .withBody(`
             {
-              "itemId": 3
+              "itemId": 5
             }
           `)
             .expectStatus(200)
             .expectJson(
                 {
-                    "_id": "656a718f638c2b484b899285",
-                    "id": 3,
-                    "displayName": "s",
-                    "assignedUser": 7,
-                    "cartId": 3,
-                    "__v": 0
+                    "_id": "657d615f981de6304e97ff87",
+                    "id": 5,
+                    "displayName": "Microwave",
+                    "cartId": 1,
+                    "__v": 0,
+                    "assignedUser": 2
                 }
             )
     });
@@ -108,7 +91,7 @@ describe('Retrieving data', () => {
             .withBody(`
             {
                 "userId": 7,
-                "cartId": 1,
+                "cartId": 5,
                 "itemId": 3
             }
           `)
@@ -128,7 +111,7 @@ describe('Retrieving data', () => {
                 "id": 7,
                 "type": "user",
                 "displayName": "Yulia",
-                "cart": 1,
+                "cart": 5,
                 "img": "user6.png",
                 "__v": 0
             }
