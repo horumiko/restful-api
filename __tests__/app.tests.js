@@ -14,13 +14,24 @@ describe('Retrieving data', () => {
         await spec()
             .get('http://localhost:8082/items')
             .expectStatus(200)
-            .expectJson([
-                {"__v": 0, "_id": "657d615f981de6304e97ff87", "assignedUser": 7, "cartId": 1, "displayName": "Microwave", "id": 3},
-                {"__v": 0, "_id": "657d6177981de6304e97ff89", "cartId": 2, "displayName": "Microwave 2", "id": 6}
-        ])
+            .expectJson([{
+                "_id": "657d615f981de6304e97ff87",
+                "id": 3,
+                "displayName": "Microwave",
+                "cartId": 1,
+                "__v": 0,
+                "assignedUser": 7
+              },
+              {
+                "_id": "657d6177981de6304e97ff89",
+                "id": 6,
+                "displayName": "Microwave 2",
+                "cartId": 2,
+                "__v": 0
+              }])
     });
 
-    test('should item with id 4', async () => {
+    test('should item with id 3', async () => {
 
         await spec()
             .get("http://localhost:8082/item")
@@ -32,14 +43,14 @@ describe('Retrieving data', () => {
           `)
             .expectStatus(200)
             .expectJson(
-                {
-                    "_id": "657d615f981de6304e97ff87",
-                    "id": 5,
-                    "displayName": "Microwave",
-                    "cartId": 1,
-                    "__v": 0,
-                    "assignedUser": 2
-                }
+            {  
+                "_id": "657d615f981de6304e97ff87",
+                "id": 3,
+                "displayName": "Microwave",
+                "cartId": 1,
+                "__v": 0,
+                "assignedUser": 7
+              }
             )
     });
     // test('should add item with id 666 and check it', async () => {
@@ -93,15 +104,15 @@ describe('Retrieving data', () => {
             }
           `)
           .expectJson(
-            {
-                "_id": "657cc43625339fcd5f13d1c5",
+                {
+                "_id": "657d66e4e71b406577a8ea18",
                 "id": 7,
                 "type": "user",
-                "displayName": "Yulia",
+                "displayName": "hor",
                 "cart": 5,
-                "img": "user6.png",
+                "img": "df",
                 "__v": 0
-            }
+                }
         )
             .expectStatus(200)    
     });
